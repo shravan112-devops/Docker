@@ -14,10 +14,10 @@ pipeline {
         }
         stage("Push to DockerHub"){
             steps{
-                withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                    sh "docker tag flaskapp ${env.dockerHubUser}/flaskapp:latest"
-                    sh "docker push ${env.dockerHubUser}/flaskapp:latest" 
+                withCredentials([usernamePassword(credentialsId:"DockerHubCreds",passwordVariable:"dockerPass",usernameVariable:"dockerUser")]){
+                    sh "docker login -u ${env.dockerUser} -p ${env.dockerPass}"
+                    sh "docker tag flaskapp ${env.dockerUser}/flaskapp:latest"
+                    sh "docker push ${env.dockerUser}/flaskapp:latest" 
                 }
             }
         }
