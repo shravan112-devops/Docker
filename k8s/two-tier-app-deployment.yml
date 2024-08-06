@@ -19,7 +19,7 @@ spec:
           image: shravan112/flaskapp:latest
           env:
             - name: MYSQL_HOST
-              value: "10.98.19.211"          # this is your mysql's service clusture IP, Make sure to change it with yours
+              value: "10.98.19.211"          
             - name: MYSQL_PASSWORD
               value: "admin"
             - name: MYSQL_USER
