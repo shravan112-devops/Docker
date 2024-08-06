@@ -97,7 +97,7 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
-        - containerPort: 8000
+        - containerPort: 5000
 ```
 
 #### Section 7: Service Manifest (`templates/service.yaml`)
